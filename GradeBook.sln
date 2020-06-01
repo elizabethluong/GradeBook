@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{113B2936-F900-4DD2-B6A3-6AFF0542A590}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{DE865471-F26E-4539-8C62-7F48ECE0E0E9}"
+ProjectSection(SolutionItems) = preProject
+	Test\GradeBook.Tests\GradeBook.Tests.csproj = Test\GradeBook.Tests\GradeBook.Tests.csproj
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook", "Src\GradeBook\GradeBook.csproj", "{5BF40573-F75B-4AE1-8ABE-EED145719F54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook.Tests", "Test\GradeBook.Tests\GradeBook.Tests.csproj", "{95B8EC8B-0895-4D24-A5AE-6BA9D58EB559}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BF40573-F75B-4AE1-8ABE-EED145719F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF40573-F75B-4AE1-8ABE-EED145719F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF40573-F75B-4AE1-8ABE-EED145719F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF40573-F75B-4AE1-8ABE-EED145719F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B8EC8B-0895-4D24-A5AE-6BA9D58EB559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B8EC8B-0895-4D24-A5AE-6BA9D58EB559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B8EC8B-0895-4D24-A5AE-6BA9D58EB559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B8EC8B-0895-4D24-A5AE-6BA9D58EB559}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5BF40573-F75B-4AE1-8ABE-EED145719F54} = {113B2936-F900-4DD2-B6A3-6AFF0542A590}
+		{95B8EC8B-0895-4D24-A5AE-6BA9D58EB559} = {DE865471-F26E-4539-8C62-7F48ECE0E0E9}
+	EndGlobalSection
+EndGlobal
