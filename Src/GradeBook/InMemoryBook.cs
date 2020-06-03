@@ -3,42 +3,49 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    public class Book
+    public abstract class Book : NamedObject
+    { 
+        public Book(string name) : base(name)
+        {
+        }
+        
+        public abstract void AddGrade(double grade);
+    }
+
+    public class InMemoryBook : Book
     {
-        public Book(string name)
+        public InMemoryBook(string name) : base(name)
         {
             grades = new List<double>();
             Name = name;
         }
 
-        /*
-        public void AddLetterGrad(char letter)
+        public void AddLetterGrade(char letter)
+    {
+        switch (letter)
         {
-            switch (letter)
-            {
-                case 'A':
-                    AddGrade(90);
+            case 'A':
+                AddGrade(90);
+                break;
+            case 'B':
+                AddGrade(80);
+                break;
+            case 'C':
+                AddGrade(70);
+                break;
+            case 'D':
+                AddGrade(60);
+                break;
+            case 'E':
+                AddGrade(50);
+                break;
+                default:
+                    AddGrade(0);
                     break;
-                case 'B':
-                    AddGrade(80);
-                    break;
-                case 'C':
-                    AddGrade(70);
-                    break;
-                case 'D':
-                    AddGrade(60);
-                    break;
-                case 'E':
-                    AddGrade(50);
-                    break;
-                    default:
-                        AddGrade(0);
-                        break;
-            }
         }
-        */
-
-        public void AddGrade(double grade)
+    }
+        
+        public override void AddGrade(double grade)
         {
             if (grade <= 100 && grade >= 0)
             {
@@ -53,7 +60,6 @@ namespace GradeBook
                 throw new AggregateException($"Invalid {nameof(grade)}");
             }
         }
-
         public event GradeAddedDelegate GradeAdded;
 
         public Statistics GetStatistics()
@@ -90,11 +96,7 @@ namespace GradeBook
         }
 
         private List<double> grades;
-
-        public string Name
-        {
-            get; set;
-        }
+        
     }
 }
 
