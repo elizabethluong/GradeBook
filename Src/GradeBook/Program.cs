@@ -8,7 +8,6 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new InMemoryBook("liz's Grade Book");
-            book.GradeAdded += OneGradeAdded;
             EnterGrades(book);
 
             
@@ -20,11 +19,11 @@ namespace GradeBook
             Console.WriteLine($"The letter grade is {stats.Letter}");
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(IBook book)
         {
             while (true)
             {
-                Console.WriteLine("Enter a grade of 'q' to quit");
+                Console.WriteLine("Enter a grade or 'q' to quit");
                 var input = Console.ReadLine();
 
                 if (input == "q")

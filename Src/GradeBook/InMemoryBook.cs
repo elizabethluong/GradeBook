@@ -3,15 +3,6 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    public abstract class Book : NamedObject
-    { 
-        public Book(string name) : base(name)
-        {
-        }
-        
-        public abstract void AddGrade(double grade);
-    }
-
     public class InMemoryBook : Book
     {
         public InMemoryBook(string name) : base(name)
@@ -20,30 +11,30 @@ namespace GradeBook
             Name = name;
         }
 
-        public void AddLetterGrade(char letter)
-    {
-        switch (letter)
+        /*public void AddLetterGrade(char letter)
         {
-            case 'A':
-                AddGrade(90);
-                break;
-            case 'B':
-                AddGrade(80);
-                break;
-            case 'C':
-                AddGrade(70);
-                break;
-            case 'D':
-                AddGrade(60);
-                break;
-            case 'E':
-                AddGrade(50);
-                break;
+            switch (letter)
+            {
+                case 'A':
+                    AddGrade(90);
+                    break;
+                case 'B':
+                    AddGrade(80);
+                    break;
+                case 'C':
+                    AddGrade(70);
+                    break;
+                case 'D':
+                    AddGrade(60);
+                    break;
+                case 'E':
+                    AddGrade(50);
+                    break;
                 default:
                     AddGrade(0);
                     break;
-        }
-    }
+            }
+        }*/ 
         
         public override void AddGrade(double grade)
         {
@@ -60,9 +51,10 @@ namespace GradeBook
                 throw new AggregateException($"Invalid {nameof(grade)}");
             }
         }
-        public event GradeAddedDelegate GradeAdded;
 
-        public Statistics GetStatistics()
+        public override event GradeAddedDelegate GradeAdded;
+        
+    public Statistics GetStatistics()
         {
             var result = new Statistics {Average = 0.0, High = double.MinValue, Low = double.MaxValue};
             for (var index = 0; index < grades.Count; index += 1)
