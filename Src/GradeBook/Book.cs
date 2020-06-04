@@ -10,7 +10,7 @@ namespace GradeBook
         public virtual event GradeAddedDelegate GradeAdded;
 
         public abstract void AddGrade(double grade);
-        public virtual Statistics GetStatisitcs()
+        public virtual Statistics GetStatistics()
         {
             throw new NotImplementedException();
         }
