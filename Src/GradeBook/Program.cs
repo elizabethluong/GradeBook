@@ -7,7 +7,7 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            IBook book = new Book.DiskBook("liz's Grade Book");
+            IBook book = new Book.DiskBook("Liz's Grade Book");
             book.GradeAdded += OneGradeAdded;
             EnterGrades(book);
             

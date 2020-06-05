@@ -60,7 +60,10 @@ namespace GradeBook
         for (var index = 0; index < grades.Count; index += 1)
             {
                 result.Add(grades[index]);
-            } return result;
+            } 
+        
+        return result;
+        
         }
 
         private List<double> grades;
