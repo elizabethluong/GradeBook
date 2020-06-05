@@ -55,16 +55,13 @@ namespace GradeBook
         public override event GradeAddedDelegate GradeAdded;
         
     public override Statistics GetStatistics()
-        {
-            var result = new Statistics {Average = 0.0, High = double.MinValue, Low = double.MaxValue};
-            for (var index = 0; index < grades.Count; index += 1)
+    {
+        var result = new Statistics();
+        for (var index = 0; index < grades.Count; index += 1)
             {
-                result.Low = Math.Min(grades[index], result.Low);
-                result.High = Math.Max(grades[index], result.High);
-                result.Average += grades[index];
+                result.Add(grades[index]);
             }
 
-            result.Average /= grades.Count;
             switch (result.Average)
             {
                 case var d when d >= 90.0:
