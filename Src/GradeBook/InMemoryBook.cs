@@ -54,7 +54,7 @@ namespace GradeBook
 
         public override event GradeAddedDelegate GradeAdded;
         
-    public Statistics GetStatistics()
+    public override Statistics GetStatistics()
         {
             var result = new Statistics {Average = 0.0, High = double.MinValue, Low = double.MaxValue};
             for (var index = 0; index < grades.Count; index += 1)
